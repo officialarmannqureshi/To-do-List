@@ -1,0 +1,45 @@
+const express = require ("express");
+const bodyParser=require("body-parser");
+const app=express();
+var items=new Array("Buy food","Drink water","Eat Apple");
+app.set('view engine','ejs');
+app.use(bodyParser.urlencoded({extended:true}));
+app.get("/",function(req,res){
+    var today =new Date();
+    var currentday=today.getDay();
+    var day="";
+    switch (currentday) {
+        case 1:
+            day="Monday";
+            break;
+        case 2:
+            day="Tuesday";
+            break;
+        case 3:
+            day="Wednesday";
+            break;
+        case 4:
+            day="Thursday";
+            break;
+        case 5:
+            day="Friday";
+            break;
+        case 6:
+            day="Saturday";
+            break
+        case 0:
+            day="Sunday";
+            break
+        default:
+            console.log("Error:Invalid day,input given is "+currentday);
+            break;
+    }
+    res.render("list",{kindofday:day});
+})
+app.listen(3005,function () {
+    console.log("Server started on port 3005");
+})
+app.post("/",function(req,res){
+    var a=req.body.newitems;
+    console.log(a);
+})
