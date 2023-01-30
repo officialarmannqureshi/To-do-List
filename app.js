@@ -24,7 +24,7 @@ mongoose.set('strictQuery', false);
 
 // mongoose.connect("mongodb://127.0.0.1:27017/todolistDB", { useNewUrlParser: true,useUnifiedTopology: true });
 
-mongoose.connect("mongodb+srv://Armann:786Aq786@cluster0.yjdtpyw.mongodb.net/todolistDB");
+mongoose.connect("mongodb+srv://Armann:<Pwd>@cluster0.yjdtpyw.mongodb.net/todolistDB");
 
 
 
